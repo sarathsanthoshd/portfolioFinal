@@ -8,7 +8,7 @@ export default defineConfig({
     proxy: {
       // This forwards any request starting with /api to your backend server
       '/api': {
-        target: 'http://localhost:5000'||'https://myportfolio-myud.onrender.com', // Your backend server URL
+        target: 'https://myportfolio-myud.onrender.com', // Your backend server URL
         changeOrigin: true,
       },
     },
