@@ -42,14 +42,14 @@ const Hero = () => {
           <motion.a href="#contact" className="btn primary" variants={textVariants}>
             Hire Me
           </motion.a>
-          <motion.a href="/Dokala Sarath Santhosh.pdf" className="btn outline" download variants={textVariants}>
+          <motion.a href="https://drive.google.com/file/d/1PgB-GKYzneBV8ara_Dc01WTwU0O0BHpf/view?usp=sharing" className="btn outline" download variants={textVariants}>
             Download CV
           </motion.a>
         </motion.div>
       </div>
       <div className="hero-right">
         <motion.img
-          src={mypic}
+          src="https://res.cloudinary.com/duasmcht4/image/upload/v1755881460/vicky_luumj9.jpg"
           alt="Sarath Santhosh"
           variants={imageVariants}
         />

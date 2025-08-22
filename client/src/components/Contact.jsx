@@ -1,5 +1,9 @@
+// src/Contact.jsx
+
 import React, { useState, useEffect } from 'react';
 import ScrollReveal from 'scrollreveal';
+// Import the new API service function
+import { sendContactForm } from "../api/apiService";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +11,8 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  // New state to handle submission status and feedback
+  const [statusMessage, setStatusMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -14,26 +20,21 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatusMessage('Sending...'); // Provide immediate feedback
+
     try {
-      // Sending form data to your Node.js/Express backend
-      const response = await fetch('/api/contact', { // The "proxy" handles the full URL
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json', // Use JSON for Express backend
-        },
-        body: JSON.stringify(formData), // Convert formData object to a JSON string
-      });
+      // Use the imported function to send the form data
+      const data = await sendContactForm(formData);
 
-      const data = await response.json(); // Get the JSON response from the server
-
-      alert(data.message); // Display the success or error message from the server
+      setStatusMessage(data.message); // Display the success message from the server
 
       if (data.success) {
         setFormData({ name: '', email: '', message: '' }); // Clear the form on success
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('Failed to send message. Please check your connection and try again.');
+      // Display a user-friendly error message
+      setStatusMessage('Failed to send message. Please try again later.');
     }
   };
 
@@ -84,6 +85,8 @@ const Contact = () => {
           </div>
           <button type="submit" className="btn">Send Message</button>
         </form>
+        {/* Display the status message to the user */}
+        {statusMessage && <p className="status-message">{statusMessage}</p>}
       </div>
     </section>
   );

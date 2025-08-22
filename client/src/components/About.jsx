@@ -1,15 +1,13 @@
 import React from 'react';
-import mypic from '../assets/mypic.png'; // Assuming you'll use the same image or provide another for about section
+ // Assuming you'll use the same image or provide another for about section
 
 const About = () => {
   return (
     <section id="about" className="about-section">
       <div className="container">
-        <h2>About Me</h2>
+        <h1 class="aboutme">About Me</h1>
+        <br/>
         <div className="about-grid">
-          <div className="about-img">
-            <img src={mypic} alt="Sarath Santhosh" />
-          </div>
           <div className="about-content">
             <p>
               Passionate B.Tech student in Artificial Intelligence and Data Science with hands-on experience in machine learning, data analysis, and Python-based development. Skilled in building smart models, solving real-world problems, and continuously learning emerging technologies. Learning stage in DSA and interest in AI-driven solutions. Actively working on impactful projects and certifications to grow in the tech industry.
