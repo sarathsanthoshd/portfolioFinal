@@ -529,3 +529,18 @@ body {
     width: 100%;
   }
 }
+.navbar .logo-link {
+  text-decoration: none; /* Removes the underline */
+  color: #000;          /* Sets the text color to black */
+}
+
+.navbar .logo-link:hover {
+  text-decoration: none; /* Ensure no underline on hover */
+  color: #333; /* Optional: a slightly lighter black on hover for feedback */
+}
+
+/* You might already have some of these styles */
+.navbar .logo {
+  font-size: 1.5rem; /* Or whatever size you prefer */
+  font-weight: bold;
+}

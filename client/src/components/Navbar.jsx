@@ -9,8 +9,17 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo">DOKALA SARATH SANTHOSH</div>
-      <input type="checkbox" id="menu-toggle" checked={menuOpen} onChange={toggleMenu} style={{ display: 'none' }} />
+      {/* The anchor tag wraps the logo div */}
+      <a href="#hero" className="logo-link">
+        <div className="logo">DOKALA SARATH SANTHOSH</div>
+      </a>
+      <input
+        type="checkbox"
+        id="menu-toggle"
+        checked={menuOpen}
+        onChange={toggleMenu}
+        style={{ display: 'none' }}
+      />
       <label htmlFor="menu-toggle" className="menu-icon">&#9776;</label>
       <ul className="nav-links">
         <li><a href="#hero">Home</a></li>

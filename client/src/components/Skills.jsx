@@ -1,42 +1,69 @@
 import React from 'react';
-import javaIcon from '../assets/java.png';
-import htmlIcon from '../assets/html.png';
-import jsIcon from '../assets/javascript.png';
-import cssIcon from '../assets/css.png';
+// Import representative icons for each main domain
+import codeIcon from '../assets/code-icon.png'; // Example icon for Programming
+import frontendIcon from '../assets/frontend-icon.png';
+import backendIcon from '../assets/backend-icon.png';
+import databaseIcon from '../assets/database-icon.png';
+import toolsIcon from '../assets/tools-icon.png';
+import mlIcon from '../assets/ml-icon.png';
+
+const skillsData = [
+  {
+    category: "Programming Languages",
+    description: "Core languages for software development",
+    icon: codeIcon,
+    skills: ["C", "Java", "Python", "JavaScript"],
+  },
+  {
+    category: "Frontend Technologies",
+    description: "Modern web development frameworks and tools",
+    icon: frontendIcon,
+    skills: ["React.js", "HTML5", "CSS3", "Tailwind CSS", "Responsive Design"],
+  },
+  {
+    category: "Backend Technologies",
+    description: "Server-side development and API creation",
+    icon: backendIcon,
+    skills: ["Node.js", "Express.js", "RESTful APIs", "Flask"],
+  },
+  {
+    category: "Databases",
+    description: "Data storage and management systems",
+    icon: databaseIcon,
+    skills: ["MongoDB", "MySQL"],
+  },
+  {
+    category: "Developer Tools",
+    description: "Essential development and design tools",
+    icon: toolsIcon,
+    skills: ["Git", "VsCode", "Jupyter Notebook", "Canva"],
+  },
+  {
+    category: "Machine Learning",
+    description: "Data science and ML libraries",
+    icon: mlIcon,
+    skills: ["Scikit-learn", "Pandas", "NumPy", "Matplotlib"],
+  },
+];
 
 const Skills = () => {
   return (
     <section id="skills" className="skills-section">
       <div className="container">
         <h2>Technical Skills</h2>
-        <div className="skills-grid">
-          <div className="skill-card">
-            <img src={javaIcon} alt="Java" className="skill-icon" />
-            <h4>Java</h4>
-            <span className="level-label">Coding</span>
-          </div>
-          <div className="skill-card">
-            <img src={htmlIcon} alt="HTML" className="skill-icon" />
-            <h4>HTML</h4>
-            <span className="level-label">Web Development</span>
-          </div>
-          <div className="skill-card">
-            <img src={cssIcon} alt="CSS" className="skill-icon" />
-            <h4>CSS</h4>
-            <span className="level-label">Web Development</span>
-          </div>
-          <div className="skill-card">
-            <img src={jsIcon} alt="JavaScript" className="skill-icon" />
-            <h4>JavaScript</h4>
-            <span className="level-label">Web Development</span>
-          </div>
-          <div className="skill-card">
-            {/* Replace with a Python icon if available, otherwise use a placeholder */}
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" className="skill-icon" />
-            <h4>Python</h4>
-            <span className="level-label">Coding | Data Science | Machine Learning</span>
-          </div>
-          {/* Add more skills as needed */}
+        <div className="skills-grid-main">
+          {skillsData.map((category, index) => (
+            <div key={index} className="skill-category-card">
+              <img src={category.icon} alt={category.category} className="category-icon" />
+              <h3 className="category-title">{category.category}</h3>
+              <p className="category-description">{category.description}</p>
+              <ul className="skill-list">
+                {category.skills.map((skill, skillIndex) => (
+                  <li key={skillIndex}>{skill}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>
