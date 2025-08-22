@@ -1,10 +1,11 @@
 import React from 'react';
 // Import representative icons for each main domain
-import codeIcon from '../assets/code-icon.png'; // Example icon for Programming
+// Corrected to .jpg based on your folder structure
+import codeIcon from '../assets/code-icon.jpg'; 
 import frontendIcon from '../assets/frontend-icon.png';
-import backendIcon from '../assets/backend-icon.png';
+import backendIcon from '../assets/backend-icon.jpg';
 import databaseIcon from '../assets/database-icon.png';
-import toolsIcon from '../assets/tools-icon.png';
+import toolsIcon from '../assets/tools-icon.jpg';
 import mlIcon from '../assets/ml-icon.png';
 
 const skillsData = [

@@ -544,3 +544,53 @@ body {
   font-size: 1.5rem; /* Or whatever size you prefer */
   font-weight: bold;
 }
+/* In your CSS file (e.g., App.css or Skills.css) */
+
+.skills-grid-main {
+  display: flex; /* Arranges children in a row */
+  flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+  gap: 20px; /* Adds space between the skill cards */
+  justify-content: center; /* Centers the cards horizontally */
+  align-items: flex-start; /* Aligns items to the start of the container */
+}
+
+.skill-category-card {
+  /* Set a fixed or minimum width for each card */
+  min-width: 250px;
+  max-width: 300px;
+  text-align: center; /* Centers text and images within the card */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+   height: 450px; /* Set a fixed height for all cards */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Optional: Additional styling for a cleaner look */
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  text-align: left;
+  /* Add a max-height and overflow property */
+  max-height: 100px; /* Adjust this value as needed */
+  overflow-y: auto; /* Aligns the list items to the left */
+}
+
+.skill-list li {
+  margin-bottom: 5px;
+}
+::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
+  background-color: #f1f1f1; /* Light gray background */
+}
+::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
+  background-color: #f1f1f1; /* Light gray background */
+}
+::-webkit-scrollbar {
+  width: 8px; /* Width of the vertical scrollbar */
+  background-color: #f1f1f1; /* Light gray background */
+}
