@@ -1,17 +1,12 @@
 // src/apiService.js
 
-/**
- * This function gets the base URL for the API.
- * It uses an environment variable (VITE_API_URL) which you can set differently
- * for development and production environments.
- */
 const getApiBaseUrl = () => {
   // In a Vite project, environment variables prefixed with VITE_ are exposed to the client-side code.
   // import.meta.env.VITE_API_URL will be replaced by Vite during the build process.
   return import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 };
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = getApiBaseUrl();
 
 export default API_URL;
 
